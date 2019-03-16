@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://room/bg.png" type="Texture" id=1]
 [ext_resource path="res://room/spot.png" type="Texture" id=2]
 [ext_resource path="res://stretchyman/stretchyman.json" type="SpineResource" id=3]
+[ext_resource path="res://stretchyman/flatlit_stretchyman.json" type="SpineResource" id=4]
 
 [node name="room" type="Node2D" index="0"]
 
@@ -15,14 +16,14 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 
 [node name="light1" type="Light2D" parent="." index="1"]
 
-position = Vector2( 431.814, 457.812 )
+position = Vector2( 130, 390 )
 enabled = true
 editor_only = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
 texture_scale = 4.0
 color = Color( 1, 0.9375, 0, 1 )
-energy = 1.0
+energy = 4.0
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -41,14 +42,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="light2" type="Light2D" parent="." index="2"]
 
-position = Vector2( 831.814, 389.812 )
+position = Vector2( 570, 390 )
 enabled = true
 editor_only = false
 texture = ExtResource( 2 )
 offset = Vector2( 0, 0 )
 texture_scale = 4.0
 color = Color( 0.289062, 1, 0, 1 )
-energy = 1.0
+energy = 4.0
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -65,9 +66,36 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="stretchyman" type="Spine" parent="." index="3"]
+[node name="light3" type="Light2D" parent="." index="3"]
 
-position = Vector2( 566, 664 )
+position = Vector2( 1000, 390 )
+enabled = true
+editor_only = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+texture_scale = 4.0
+color = Color( 0.078125, 0, 1, 1 )
+energy = 4.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="stretchyman" type="Spine" parent="." index="4"]
+
+position = Vector2( 290, 530 )
+scale = Vector2( 0.7, 0.7 )
 process_mode = 1
 speed = 0.2
 active = true
@@ -85,6 +113,29 @@ debug/region = false
 debug/mesh = false
 debug/skinned_mesh = false
 debug/bounding_box = false
-_sections_unfolded = [ "playback" ]
+_sections_unfolded = [ "Transform", "playback" ]
+
+[node name="flatlit_stretchyman" type="Spine" parent="." index="5"]
+
+position = Vector2( 790, 530 )
+scale = Vector2( 0.7, 0.7 )
+process_mode = 1
+speed = 0.2
+active = true
+skip_frames = 0
+debug_bones = false
+flip_x = false
+flip_y = false
+fx_prefix = "fx/"
+resource = ExtResource( 4 )
+playback/play = "sneak rm"
+playback/loop = true
+playback/forward = true
+playback/skin = ""
+debug/region = false
+debug/mesh = false
+debug/skinned_mesh = false
+debug/bounding_box = false
+_sections_unfolded = [ "Transform", "playback" ]
 
 
